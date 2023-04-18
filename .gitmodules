@@ -1,0 +1,3 @@
+[submodule "odrive_can_ros_driver"]
+	path = odrive_can_ros_driver
+	url = https://github.com/belovictor/odrive_can_ros_driver.git
