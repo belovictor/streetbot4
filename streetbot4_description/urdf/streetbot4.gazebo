@@ -12,9 +12,6 @@
             <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
     </gazebo>
-    <!-- <gazebo reference="base_footprint">
-        <material>Gazebo/BlueTransparent</material>
-    </gazebo> -->
     <!-- rplidar -->
     <gazebo reference="rplidar_link">
         <sensor type="ray" name="head_rplidar_sensor">
@@ -32,7 +29,7 @@
                 </scan>
                 <range>
                     <min>0.15</min>
-                    <max>6.0</max>
+                    <max>30.0</max>
                     <resolution>0.01</resolution>
                 </range>
                 <noise>
@@ -93,7 +90,7 @@
     <gazebo>
         <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
             <robotNamespace>/</robotNamespace>
-            <jointName>base_to_rear_left_wheel, base_to_rear_right_wheel, base_to_middle_left_wheel, base_to_middle_right_wheel, base_to_front_left_wheel, base_to_front_right_wheel</jointName>
+            <jointName>base_to_rear_left_wheel, base_to_rear_right_wheel, base_to_front_left_wheel, base_to_front_right_wheel</jointName>
             <updateRate>100</updateRate>
         </plugin>
     </gazebo>
@@ -112,29 +109,23 @@
     </gazebo>
     <!-- DiffDrivePlugin6W plugin -->
     <gazebo>
-       <plugin name="DiffDrivePlugin6W" filename="libdiffdrive_plugin_6w.so">
-            <legacyMode>false</legacyMode>
+       <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
             <rosDebugLevel>Debug</rosDebugLevel>
-            <publishTf>true</publishTf>
-            <publishWheelTF>true</publishWheelTF>
-            <publishWheelJointState>true</publishWheelJointState>
-            <publishOdomTF>true</publishOdomTF>
-            <alwaysOn>true</alwaysOn>
             <updateRate>10.0</updateRate>
-            <frontLeftJoint>base_to_front_left_wheel</frontLeftJoint>
-            <midLeftJoint>base_to_middle_left_wheel</midLeftJoint>
-            <rearLeftJoint>base_to_rear_left_wheel</rearLeftJoint>
-            <frontRightJoint>base_to_front_right_wheel</frontRightJoint>
-            <midRightJoint>base_to_middle_right_wheel</midRightJoint>
-            <rearRightJoint>base_to_rear_right_wheel</rearRightJoint>
-            <wheelSeparation>0.15</wheelSeparation>
-            <wheelDiameter>0.07</wheelDiameter>
+            <leftFrontJoint>base_to_front_left_wheel</leftFrontJoint>
+            <leftRearJoint>base_to_rear_left_wheel</leftRearJoint>
+            <rightFrontJoint>base_to_front_right_wheel</rightFrontJoint>
+            <rightRearJoint>base_to_rear_right_wheel</rightRearJoint>
+            <wheelSeparation>0.172</wheelSeparation>
+            <wheelDiameter>0.216</wheelDiameter>
             <torque>10</torque>
+            <MaxForce>5.0</MaxForce>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>
             <odometrySource>world</odometrySource>
             <robotBaseFrame>base_link</robotBaseFrame>
+            <broadcastTF>1</broadcastTF>
         </plugin>
     </gazebo>
     <!-- robot body -->
@@ -155,24 +146,6 @@
         <material>Gazebo/Red</material>
     </gazebo>
     <gazebo reference="rear_right_wheel">
-        <mu1 value="${lateral_friction}" />
-        <mu2 value="${spinning_friction}" />
-        <kp value="${contact_stiffness}" />
-        <kd value="${contact_damping}" />
-        <fdir1 value="1 0 0"/>
-        <minDepth>0</minDepth>
-        <material>Gazebo/Red</material>
-    </gazebo>
-    <gazebo reference="middle_left_wheel">
-        <mu1 value="${lateral_friction}" />
-        <mu2 value="${spinning_friction}" />
-        <kp value="${contact_stiffness}" />
-        <kd value="${contact_damping}" />
-        <fdir1 value="1 0 0"/>
-        <minDepth>0</minDepth>
-        <material>Gazebo/Red</material>
-    </gazebo>
-    <gazebo reference="middle_right_wheel">
         <mu1 value="${lateral_friction}" />
         <mu2 value="${spinning_friction}" />
         <kp value="${contact_stiffness}" />
@@ -203,12 +176,6 @@
         <material>Gazebo/White</material>
     </gazebo>
     <gazebo reference="rear_right_wheel_marker">
-        <material>Gazebo/White</material>
-    </gazebo>
-    <gazebo reference="middle_left_wheel_marker">
-        <material>Gazebo/White</material>
-    </gazebo>
-    <gazebo reference="middle_right_wheel_marker">
         <material>Gazebo/White</material>
     </gazebo>
     <gazebo reference="front_left_wheel_marker">

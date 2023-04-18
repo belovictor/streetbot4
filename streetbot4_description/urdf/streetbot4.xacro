@@ -36,9 +36,9 @@
 			<material name="White" />
 		</visual>
 		<collision>
-			<origin xyz="0 0 ${clearance}" rpy="0 0 0" />
+			<origin xyz="0 0 -0.015" rpy="${PI/2} 0 ${PI/2}" />
             <geometry>
-                <box size="${wheel_distance + wheel_distance} ${wheel_separation - 0.04} ${body_height}"/>
+                <mesh filename="package://streetbot4_description/meshes/streetbot4_body.stl" scale="0.001 0.001 0.001" />
             </geometry>
 		</collision>
         <inertial>
@@ -61,7 +61,7 @@
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
         </inertial>
         <visual>
-            <origin xyz="0 0 -0.020" rpy="0 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
                 <cylinder radius="0.035" length="0.039"/>
             </geometry>
@@ -75,7 +75,7 @@
         </collision>
     </link>
     <joint name="joint_sensor_laser" type="fixed">
-        <origin xyz="0 0 0.140" rpy="0 0 ${PI}"/>
+        <origin xyz="0 0 0.120" rpy="0 0 ${PI}"/>
         <parent link="body_link"/>
         <child link="rplidar_link"/>
     </joint>
