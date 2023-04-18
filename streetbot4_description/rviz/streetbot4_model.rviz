@@ -202,9 +202,9 @@ Visualization Manager:
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
-      Size (Pixels): 4
+      Size (Pixels): 3
       Size (m): 0.019999999552965164
-      Style: Points
+      Style: Flat Squares
       Topic: /scan
       Unreliable: false
       Use Fixed Frame: true
@@ -238,7 +238,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 14.259745597839355
+      Distance: 10.242457389831543
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -254,9 +254,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7303987145423889
+      Pitch: 0.5853986740112305
       Target Frame: <Fixed Frame>
-      Yaw: 0.6453893184661865
+      Yaw: 0.5703892111778259
     Saved: ~
 Window Geometry:
   Displays:
