@@ -11,6 +11,8 @@
     <xacro:property name="wheel_separation" value="0.344"/>
     <xacro:property name="wheel_distance" value="0.249"/>
     <xacro:property name="wheel_width" value="0.086"/>
+    <xacro:property name="wheel_marker_length" value="0.03"/>
+    <xacro:property name="wheel_marker_width" value="0.005"/>
     <xacro:property name="mass" value="0.1"/>
     <xacro:property name="wheel_mass" value="0.2"/>
     <xacro:property name="marker_mass" value="0.0"/>
@@ -101,7 +103,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size="0.03 0.005 0.005" />
+                <box size="${wheel_marker_length} ${wheel_marker_width} ${wheel_marker_width}" />
             </geometry>
             <material name="White" />
         </visual>
@@ -133,7 +135,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size="0.03 0.005 0.005" />
+                <box size="${wheel_marker_length} ${wheel_marker_width} ${wheel_marker_width}" />
             </geometry>
             <material name="White" />
         </visual>
@@ -165,7 +167,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size="0.03 0.005 0.005" />
+                <box size="${wheel_marker_length} ${wheel_marker_width} ${wheel_marker_width}" />
             </geometry>
             <material name="White" />
         </visual>
@@ -197,7 +199,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size="0.03 0.005 0.005" />
+                <box size="${wheel_marker_length} ${wheel_marker_width} ${wheel_marker_width}" />
             </geometry>
             <material name="White" />
         </visual>
@@ -241,21 +243,21 @@
     <joint name="rear_left_wheel_to_marker" type="fixed">
         <parent link="rear_left_wheel" />
         <child link="rear_left_wheel_marker" />
-        <origin xyz="0.015 0.0175 0" rpy="0 0 0" />
+        <origin xyz="${wheel_radius - wheel_marker_length / 2} ${wheel_width / 2 + wheel_marker_width / 2} 0" rpy="0 0 0" />
     </joint>
     <joint name="rear_right_wheel_to_marker" type="fixed">
         <parent link="rear_right_wheel" />
         <child link="rear_right_wheel_marker" />
-        <origin xyz="0.015 -0.0175 0" rpy="0 0 0" />
+        <origin xyz="${wheel_radius - wheel_marker_length / 2} -${wheel_width / 2 + wheel_marker_width / 2} 0" rpy="0 0 0" />
     </joint>
     <joint name="front_left_wheel_to_marker" type="fixed">
         <parent link="front_left_wheel" />
         <child link="front_left_wheel_marker" />
-        <origin xyz="0.015 0.0175 0" rpy="0 0 0" />
+        <origin xyz="${wheel_radius - wheel_marker_length / 2} ${wheel_width / 2 + wheel_marker_width / 2} 0" rpy="0 0 0" />
     </joint>
     <joint name="front_right_wheel_to_marker" type="fixed">
         <parent link="front_right_wheel" />
         <child link="front_right_wheel_marker" />
-        <origin xyz="0.015 -0.0175 0" rpy="0 0 0" />
+        <origin xyz="${wheel_radius - wheel_marker_length / 2} -${wheel_width / 2 + wheel_marker_width / 2} 0" rpy="0 0 0" />
     </joint>
 </robot>
