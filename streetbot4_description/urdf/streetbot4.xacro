@@ -3,6 +3,9 @@
 	xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<!-- Matherials -->
 	<xacro:include filename="$(find streetbot4_description)/urdf/streetbot4_materials.xacro" />
+    <!-- Components -->
+    <xacro:include filename="$(find streetbot4_description)/urdf/jsnsr20y1.xacro" />
+    <xacro:include filename="$(find streetbot4_description)/urdf/jsnsr20y1.gazebo" />
     <!-- Gazebo parameters -->
     <xacro:include filename="$(find streetbot4_description)/urdf/streetbot4.gazebo" />
     <xacro:property name="clearance" value="0.100" />
@@ -79,6 +82,71 @@
         <parent link="body_link"/>
         <child link="rplidar_link"/>
     </joint>
+    <!-- GPS-->
+    <link name="gps_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.1" />
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.040 0.040 0.015" />
+            </geometry>
+            <material name="Green" />
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.040 0.040 0.015" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_sensor_gps" type="fixed">
+        <origin xyz="0.200 0 0.105" rpy="0 0 0"/>
+        <parent link="body_link"/>
+        <child link="gps_link"/>
+    </joint>
+    <!-- Camera-->
+    <link name="camera_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.1" />
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.010 0.010 0.010" />
+            </geometry>
+            <material name="Green" />
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.010 0.010 0.010" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_sensor_camera" type="fixed">
+        <origin xyz="0.340 0 0.045" rpy="0 0 0"/>
+        <parent link="body_link"/>
+        <child link="camera_link"/>
+    </joint>
+    <!-- 4 Ultrasonic distance sensors -->
+    <xacro:jsnsr20y1 parent="body_link" name="ultrasonic1">
+        <origin xyz="0.325 0.090 0.005" rpy="0 0.296705973 0"/>
+    </xacro:jsnsr20y1>
+    <xacro:jsnsr20y1 parent="body_link" name="ultrasonic2">
+        <origin xyz="0.325 -0.090 0.005" rpy="0 0.296705973 0"/>
+    </xacro:jsnsr20y1>
+    <xacro:jsnsr20y1 parent="body_link" name="ultrasonic3">
+        <origin xyz="-0.338 0.090 0.045" rpy="0 0.296705973 ${PI}"/>
+    </xacro:jsnsr20y1>
+    <xacro:jsnsr20y1 parent="body_link" name="ultrasonic4">
+        <origin xyz="-0.338 -0.090 0.045" rpy="0 0.296705973 ${PI}"/>
+    </xacro:jsnsr20y1>
     <!-- Wheels -->
     <link name="rear_left_wheel">
         <visual>

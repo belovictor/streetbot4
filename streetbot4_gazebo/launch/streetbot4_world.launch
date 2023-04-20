@@ -26,6 +26,9 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -model streetbot4 -param robot_description"/>
 
+  <!-- Run rosbridge websocket server for remote connections -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
   <!-- ros_control rrbot launch file -->
   <!-- <include file="$(find streetbot4_control)/launch/streetbot4_control.launch" /> -->
 

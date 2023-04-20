@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="jsnsr20y1" params="name parent *origin">
+        <joint name="joint_sensor_${name}" type="fixed">
+            <xacro:insert_block name="origin" />
+            <parent link="${parent}"/>
+            <child link="${name}_link"/>
+        </joint>
+        <link name="${name}_link">
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="0.1" />
+                <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+            </inertial>
+            <visual>
+                <origin xyz="0 -0.013 0" rpy="0 ${PI / 2} 0" />
+                <geometry>
+                    <cylinder radius="0.006" length="0.005"/>
+                </geometry>
+                <material name="Black" />
+            </visual>
+            <visual>
+                <origin xyz="0 0.013 0" rpy="0 ${PI / 2} 0" />
+                <geometry>
+                    <cylinder radius="0.006" length="0.005"/>
+                </geometry>
+                <material name="Black" />
+            </visual>
+            <collision>
+                <origin xyz="-0.09 0 0" rpy="0 ${PI / 2} 0"/>
+                <geometry>
+                    <cylinder radius="0.006" length="0.005"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+</robot>
