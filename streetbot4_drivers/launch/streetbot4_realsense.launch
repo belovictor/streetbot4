@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="enable_pointcloud" default="true" />
+        <arg name="enable_accel" default="true" />
+        <arg name="enable_gyro" default="true" />
+        <arg name="accel_fps" default="10" />
+        <arg name="gyro_fps" default="10" />
+    </include>
+</launch>
