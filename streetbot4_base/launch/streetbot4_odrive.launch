@@ -1,0 +1,8 @@
+<launch>
+    <node name="odrive_can_ros_node" pkg="odrive_can_ros_driver" type="odrive_node" output="screen">
+        <rosparam file="$(find streetbot4_base)/config/streetbot4_odrive.yaml" />
+    </node>
+    <node pkg="socketcan_bridge" type="socketcan_bridge_node" name="socketcan_bridge" output="screen" ns="can">
+        <rosparam file="$(find streetbot4_base)/config/streetbot4_odrive.yaml" />
+    </node>
+</launch>

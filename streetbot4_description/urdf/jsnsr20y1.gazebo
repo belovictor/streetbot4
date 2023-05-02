@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:property name="ultrasonic_update_rate" value="10.0" />
     <xacro:property name="ultrasonic_ray_count" value="10.0" />
-    <xacro:property name="ultrasonic_field_of_view" value="1.0472" />
+    <xacro:property name="ultrasonic_field_of_view" value="0.523599" />
     <xacro:property name="ultrasonic_min_range" value="0.01" />
     <xacro:property name="ultrasonic_max_range" value="3.00" />
     <xacro:property name="ultrasonic_resolution" value="0.001" />
@@ -13,7 +13,7 @@
                 <always_on>true</always_on>
                 <update_rate>${ultrasonic_update_rate}</update_rate>
                 <pose>0 0 0 0 0 0</pose>
-                <visualize>false</visualize>
+                <visualize>true</visualize>
                 <ray>
                     <scan>
                         <horizontal>

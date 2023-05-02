@@ -1,0 +1,5 @@
+<launch>
+	<rosparam file="$(find streetbot4_control)/config/streetbot4_control_config.yaml" command="load" />
+	<node name="controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen" args="joint_state_controller streetbot4_drive_controller" />
+</launch>
