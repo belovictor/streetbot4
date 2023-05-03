@@ -86,8 +86,8 @@ StreetBot4HardwareInterface::StreetBot4HardwareInterface(ros::NodeHandle node, r
 void StreetBot4HardwareInterface::writeCommandsToHardware() {
 	double diff_angle_speed_front_left = _joints[0].velocity_command;
 	double diff_angle_speed_front_right = _joints[1].velocity_command;
-	double diff_angle_speed_rear_left = _joints[4].velocity_command;
-	double diff_angle_speed_rear_right = _joints[5].velocity_command;
+	double diff_angle_speed_rear_left = _joints[2].velocity_command;
+	double diff_angle_speed_rear_right = _joints[3].velocity_command;
 
 	limitDifferentialSpeed(diff_angle_speed_front_left, diff_angle_speed_front_right);
 	limitDifferentialSpeed(diff_angle_speed_rear_left, diff_angle_speed_rear_right);
@@ -111,8 +111,8 @@ void StreetBot4HardwareInterface::writeCommandsToHardware() {
 void StreetBot4HardwareInterface::updateJointsFromHardware(const ros::Duration& period) {
 	double delta_front_left_wheel = _front_left_wheel_angle - _joints[0].position - _joints[0].position_offset;
 	double delta_front_right_wheel = _front_right_wheel_angle - _joints[1].position - _joints[1].position_offset;
-	double delta_rear_left_wheel = _rear_left_wheel_angle - _joints[4].position - _joints[4].position_offset;
-	double delta_rear_right_wheel = _rear_right_wheel_angle - _joints[5].position - _joints[5].position_offset;
+	double delta_rear_left_wheel = _rear_left_wheel_angle - _joints[2].position - _joints[2].position_offset;
+	double delta_rear_right_wheel = _rear_right_wheel_angle - _joints[3].position - _joints[3].position_offset;
 
 	if (std::abs(delta_front_left_wheel) < 1) {
 		_joints[0].position += delta_front_left_wheel;
