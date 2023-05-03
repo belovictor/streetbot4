@@ -13,6 +13,7 @@
 	<include file="$(find streetbot4_control)/launch/streetbot4_control.launch" />
 	<include file="$(find streetbot4_base)/launch/streetbot4_odrive.launch" />
 	<include file="$(find streetbot4_drivers)/launch/streetbot4_drivers.launch" />
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
 	<!-- <include file="$(find streetbot_slam)/launch/streetbot_slam.launch"/> -->
 	<!-- Rviz -->
     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="false"/> -->
