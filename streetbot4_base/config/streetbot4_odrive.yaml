@@ -11,6 +11,6 @@ engage_on_startup: true
 # array of strings representing names of axises
 axis_names: ["front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel"]
 # array of ints representing can ids of axises
-axis_can_ids: [1, 2, 3, 4]
+axis_can_ids: [1, 2, 4, 3]
 # array of axis directions
 axis_directions: ["forward", "backward", "forward", "backward"]
