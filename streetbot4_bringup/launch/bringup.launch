@@ -7,8 +7,8 @@
 	<param name="use_gui" value="$(arg gui)" />
 	<!-- Robot Description from URDF -->
 	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
-	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
-	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" /> -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
 	<include file="$(find streetbot4_base)/launch/streetbot4_base.launch" />
 	<include file="$(find streetbot4_control)/launch/streetbot4_control.launch" />
 	<include file="$(find streetbot4_base)/launch/streetbot4_odrive.launch" />
