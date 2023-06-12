@@ -1,0 +1,10 @@
+ros-noetic-tf
+ros-noetic-controller-manager
+ros-noetic-nmea-navsat-driver
+ros-noetic-diff-drive-controller
+ros-noetic-joint-state-controller
+ros-noetic-robot-state-publisher
+ros-noetic-joint-state-publisher
+ros-noetic-xacro
+ros-noetic-rosbridge-server
+ros-noetic-socketcan-bridge
