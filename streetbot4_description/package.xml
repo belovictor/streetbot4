@@ -57,7 +57,6 @@
   <build_export_depend>tf</build_export_depend>
   <build_export_depend>urdf</build_export_depend>
   <build_export_depend>xacro</build_export_depend>
-  <exec_depend>rviz</exec_depend>
   <exec_depend>tf</exec_depend>
   <exec_depend>urdf</exec_depend>
   <exec_depend>xacro</exec_depend>
