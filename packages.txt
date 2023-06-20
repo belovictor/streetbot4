@@ -8,3 +8,4 @@ ros-noetic-joint-state-publisher
 ros-noetic-xacro
 ros-noetic-rosbridge-server
 ros-noetic-socketcan-bridge
+ros-noetic-twist-mux

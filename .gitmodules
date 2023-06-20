@@ -10,3 +10,6 @@
 [submodule "rplidar_ros"]
 	path = rplidar_ros
 	url = https://github.com/belovictor/rplidar_ros.git
+[submodule "sbus_serial"]
+	path = sbus_serial
+	url = https://github.com/belovictor/sbus_serial.git

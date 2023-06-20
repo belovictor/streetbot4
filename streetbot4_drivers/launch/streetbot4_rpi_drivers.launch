@@ -2,4 +2,5 @@
     <include file="$(find streetbot4_drivers)/launch/streetbot4_gps.launch" />
     <include file="$(find streetbot4_drivers)/launch/streetbot4_uavcan.launch" />
     <include file="$(find streetbot4_drivers)/launch/streetbot4_ultrasound.launch" />
+    <include file="$(find streetbot4_drivers)/launch/streetbot4_sbus.launch" />
 </launch>
