@@ -1,0 +1,6 @@
+[NetDev]
+Name=can0
+Kind=can
+MTUBytes=16
+Description=CAN0 network interface
+

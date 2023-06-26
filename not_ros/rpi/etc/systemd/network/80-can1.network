@@ -1,0 +1,7 @@
+[Match]
+Name=can1
+
+[CAN]
+BitRate=1000000
+TransmitQueueLength=4096
+RestartSec=100ms
