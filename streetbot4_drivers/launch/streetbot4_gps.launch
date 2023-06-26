@@ -1,5 +1,5 @@
 <launch>
-    <arg name="port" default="/dev/ttyUSB2" />
+    <arg name="port" default="/dev/gps" />
     <arg name="baud" default="38400" />
     <arg name="frame_id" default="gps_link" />
     <arg name="use_GNSS_time" default="False" />
