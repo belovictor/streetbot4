@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="bag_record" pkg="rosbag" type="record"
+		args="record -o /data/streetbot4 --split --duration 1m -a --max-splits=60" />
+</launch>
