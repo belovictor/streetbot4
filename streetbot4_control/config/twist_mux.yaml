@@ -8,6 +8,11 @@ topics:
   name: navigation
   topic: navigation/cmd_vel
   timeout: 0.5
+  priority: 5
+-
+  name: zero
+  topic: zero/cmd_vel
+  timeout: 0.5
   priority: 1
 locks:
 -
