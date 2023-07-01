@@ -8,7 +8,7 @@
         <param name="outMinValue" value="-100" />
         <param name="outMaxValue" value="100" />
         <param name="silentOnFailsafe" value="true" />
-        <param name="enableChannelNum" value="6" />
+        <param name="enableChannelNum" value="5" />
         <param name="enableChannelProportionalMin" type="double" value="0.5" />
         <param name="enableChannelProportionalMax" type="double" value="1.0" />
     </node>
