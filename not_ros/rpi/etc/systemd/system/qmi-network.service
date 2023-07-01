@@ -1,0 +1,11 @@
+[Unit]
+Description=Start QMI network
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/usr/bin/qmi-network /dev/cdc-wdm0 start
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
