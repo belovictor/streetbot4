@@ -13,3 +13,6 @@
 [submodule "sbus_serial"]
 	path = sbus_serial
 	url = https://github.com/belovictor/sbus_serial.git
+[submodule "handsfree_ros_imu"]
+	path = handsfree_ros_imu
+	url = https://github.com/belovictor/handsfree_ros_imu.git
